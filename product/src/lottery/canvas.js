@@ -6,7 +6,7 @@
   var canvas = document.getElementById("canvas");
 
   ~~(function setSize() {
-    //定义canvas的宽高，让他跟浏览器的窗口的宽高相同
+    //Define the width of Canvas, so that he is the same as the width and height of the browser's window
     window.onresize = arguments.callee;
     w = window.innerWidth;
     h = window.innerHeight;

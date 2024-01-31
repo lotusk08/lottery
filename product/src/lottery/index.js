@@ -212,40 +212,40 @@ function bindEvent() {
     if (isLotting) {
       if (e.target.id === "lottery") {
         rotateObj.stop();
-        btns.lottery.innerHTML = "开始抽奖";
+        btns.lottery.innerHTML = "Quay thưởng";
       } else {
-        addQipao("正在抽奖，抽慢一点点～～");
+        addQipao("May mắn vẫn đang đợi bạn, bình tĩnh!");
       }
       return false;
     }
 
     let target = e.target.id;
     switch (target) {
-      // 显示数字墙
+      // Màn hình bắt đầu
       case "welcome":
         switchScreen("enter");
         rotate = false;
         break;
-      // 进入抽奖
+      // Bắt đầu quay - bấm nút
       case "enter":
         removeHighlight();
-        addQipao(`马上抽取[${currentPrize.title}],不要走开。`);
+        addQipao(`Đang tìm chủ nhân của [${currentPrize.title}], đi ra ngoài mất ráng chịu。`);
         // rotate = !rotate;
         rotate = true;
         switchScreen("lottery");
         break;
-      // 重置
+      // Tính năng reset kết quả
       case "reset":
         let doREset = window.confirm(
-          "是否确认重置数据，重置后，当前已抽的奖项全部清空？"
+          "Hey, bạn có chắc muốn reset chứ?. Ai đã trúng giải sẽ bị mất hết đó! Nút sa là gà lên tủ đó!"
         );
         if (!doREset) {
           return;
         }
-        addQipao("重置所有数据，重新抽奖");
+        addQipao("Đã xoá dữ liệu trước đó");
         addHighlight();
         resetCard();
-        // 重置所有数据
+        // Hiển thị
         currentLuckys = [];
         basicData.leftUsers = Object.assign([], basicData.users);
         basicData.luckyUsers = {};
@@ -267,16 +267,16 @@ function bindEvent() {
           // 抽奖
           lottery();
         });
-        addQipao(`正在抽取[${currentPrize.title}],调整好姿势`);
+        addQipao(`Đang quay giải [${currentPrize.title}]!`);
         break;
       // 重新抽奖
       case "reLottery":
         if (currentLuckys.length === 0) {
-          addQipao(`当前还没有抽奖，无法重新抽取喔~~`);
+          addQipao(`There is no lucky draw yet, so we cannot re-draw~~`);
           return;
         }
         setErrorData(currentLuckys);
-        addQipao(`重新抽取[${currentPrize.title}],做好准备`);
+        addQipao(`Đang tìm lại chủ nhân của [${currentPrize.title}]`);
         setLotteryStatus(true);
         // 重新抽奖则直接进行抽取，不对上一次的抽奖数据进行保存
         // 抽奖
@@ -293,7 +293,7 @@ function bindEvent() {
             currentLuckys = [];
           });
           exportData();
-          addQipao(`数据已保存到EXCEL中。`);
+          addQipao(`Danh sách những người trúng giải đã được xuất ra Excel。`);
         });
         break;
     }
@@ -511,7 +511,7 @@ function selectCard(duration = 600) {
 
   let text = currentLuckys.map(item => item[1]);
   addQipao(
-    `恭喜${text.join("、")}获得${currentPrize.title}, 新的一年必定旺旺旺。`
+    `Chúc mừng ${text.join("、")} đã nhận được ${currentPrize.title}。`
   );
 
   selectedCardIndex.forEach((cardIndex, index) => {
@@ -616,7 +616,7 @@ function lottery() {
   //   btns.lottery.innerHTML = "开始抽奖";
   //   return;
   // }
-  btns.lottery.innerHTML = "结束抽奖";
+  btns.lottery.innerHTML = "Chọn người may mắn";
   rotateBall().then(() => {
     // 将之前的记录置空
     currentLuckys = [];
@@ -628,7 +628,7 @@ function lottery() {
       leftPrizeCount = currentPrize.count - (luckyData ? luckyData.length : 0);
 
     if (leftCount < perCount) {
-      addQipao("剩余参与抽奖人员不足，现在重新设置所有人员可以进行二次抽奖！");
+      addQipao("Số lượng người tham gia còn lại không đủ, cần đặt lại tất cả các nhân viên có thể thực hiện lượt quay tiếp theo！");
       basicData.leftUsers = basicData.users.slice();
       leftCount = basicData.leftUsers.length;
     }
@@ -798,7 +798,7 @@ function reset() {
   window.AJAX({
     url: "/reset",
     success(data) {
-      console.log("重置成功");
+      console.log("reset successful");
     }
   });
 }
@@ -855,7 +855,7 @@ window.onload = function () {
             animate();
           },
           () => {
-            addQipao("背景音乐自动播放失败，请手动播放！");
+            addQipao("Phần mềm được hiệu chỉnh bởi stevehoang.com dựa trên dự án mã nguồn mở！");
           }
         );
       } else {

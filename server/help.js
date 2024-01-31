@@ -8,7 +8,7 @@ if (!fs.existsSync(cwd)) {
 }
 
 /**
- * 读取缓存的数据内容
+ * Read the cache data content
  */
 function loadTempData() {
   let pros = [];
@@ -40,7 +40,7 @@ function loadTempData() {
 }
 
 /**
- * 读取XML文件数据
+ * Read xml file data
  */
 function loadXML(xmlPath) {
   let userData = xlsx.parse(xmlPath);
@@ -62,7 +62,7 @@ function loadXML(xmlPath) {
 function writeXML(data, name) {
   let buffer = xlsx.build([
     {
-      name: "抽奖结果",
+      name: "Kết quả quay số",
       data: data
     }
   ]);
@@ -79,7 +79,7 @@ function writeXML(data, name) {
 }
 
 /**
- * 写入文件
+ * Write file
  * @param {*} data
  */
 function saveDataFile(data) {
@@ -96,13 +96,13 @@ function saveDataFile(data) {
         return;
       }
       resolve();
-      console.log("数据写入成功");
+      console.log("Dữ liệu đã được ghi lại - Successful data writing");
     });
   });
 }
 
 /**
- * 错误日志文件输出
+ * Error log file output
  * @param {*} data
  */
 function saveErrorDataFile(data) {
@@ -118,13 +118,13 @@ function saveErrorDataFile(data) {
         return;
       }
       resolve();
-      console.log("数据写入成功");
+      console.log("Dữ liệu đã được ghi lại - Successful data writing");
     });
   });
 }
 
 /**
- * 洗牌算法
+ * Shuffle algorithm
  * @param {*} arr
  */
 function shuffle(arr) {

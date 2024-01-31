@@ -1,10 +1,10 @@
 const fs = require("fs");
 
-// 测试抽奖结果数据的正确性
+// The correctness of the test draw results data
 var selected = {},
   repeat = [],
-  luckyData = require("/Users/xiechang/Documents/project/抽奖/product/dist/temp.json"),
-  errorData = require("/Users/xiechang/Documents/project/抽奖/product/dist/error.json");
+  luckyData = require("/Users/steve/Documents/Nova/lottery/product/dist/temp.json"),
+  errorData = require("/Users/steve/Documents/Nova/lottery/product/dist/error.json");
 
 for (let key in luckyData) {
   let item = luckyData[key];
@@ -31,4 +31,4 @@ if (repeat.length > 0) {
   console.log(repeat);
   return;
 }
-console.log("没有重复选项");
+console.log("No repeated options");
