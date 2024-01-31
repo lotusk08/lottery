@@ -1,0 +1,37 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install npm dependencies for server
+      run: npm install
+      working-directory: ./server
+
+    - name: Install npm dependencies for product
+      run: npm install
+      working-directory: ./product
+
+    - name: Build product
+      run: npm run build
+      working-directory: ./product
+
+    - name: Serve product
+      run: npm run serve
+      working-directory: ./product
+
+    - name: Create and switch to docs branch
+      run: |
+        git checkout -b docs
+        git add .
+        git commit -m "Add built files"
+        git push origin docs
