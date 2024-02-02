@@ -21,9 +21,9 @@ jobs:
       run: npm install
       working-directory: ./product
 
-    - name: Create and switch to docs branch
+    - name: Create and switch to docs folder
       run: |
-        git checkout -b docs
+        git checkout https://github.com/lotusk08/lottery/docs
         git add .
         git commit -m "Add built files"
         git push origin docs
