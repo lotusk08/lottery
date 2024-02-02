@@ -20,10 +20,18 @@ jobs:
     - name: Install npm dependencies for product
       run: npm install
       working-directory: ./product
+      
+    - name: Build product
+      run: npm run build
+      working-directory: ./product
+
+    - name: Serve product
+      run: npm run serve
+      working-directory: ./product
 
     - name: Create and switch to docs folder
       run: |
-        git checkout https://github.com/lotusk08/lottery/docs
+        git checkout https://github.com/lotusk08/lottery/doc
         git add .
         git commit -m "Add built files"
         git push origin docs
