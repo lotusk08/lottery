@@ -16,36 +16,36 @@ const prizes = [
   {
     type: 1,
     count: 3,
-    text: "Giải đặc biệt",
-    title: "50.000.000",
+    text: "Giải",
+    title: "đặc biệt",
     img: "../img/dac biet.webp"
   },
   {
     type: 2,
     count: 5,
-    text: "Giải nhất",
-    title: "40.000.000",
+    text: "Giải",
+    title: "nhất",
     img: "../img/nhat.webp"
   },
   {
     type: 3,
     count: 5,
-    text: "Giải nhì",
-    title: "30.000.000",
+    text: "Giải",
+    title: "nhì",
     img: "../img/nhi.webp"
   },
   {
     type: 4,
     count: 10,
-    text: "Giải ba",
-    title: "20.000.000",
+    text: "Giải",
+    title: "ba",
     img: "../img/ba.webp"
   },
   {
     type: 5,
     count: 30,
-    text: "Giải khuyến khích",
-    title: "10.000.000",
+    text: "Giải",
+    title: "khuyến khích",
     img: "../img/kk.webp"
   }
 ];
