@@ -58,7 +58,7 @@ const EACH_COUNT = [1, 3, 5, 5, 5, 10];
 /**
  * Card company name identification
  */
-const COMPANY = "IN";
+const COMPANY = "";
 
 module.exports = {
   prizes,
