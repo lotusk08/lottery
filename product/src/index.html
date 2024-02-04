@@ -22,11 +22,14 @@
     </div>
 
     <div class="music">
-      <audio id="music" src="./data/music.mp3" class="music-item" loop></audio>
-      <div id="musicBox" class="music-box" title="Play/pause background music">Music</div>
+      <audio id="music" src="./data/music.mp3" class="hidden" loop></audio>
+      <div id="musicBox" class="hidden" title="Play/pause background music">Music</div>
     </div>
 
-    <div id="prizeBar"></div>
+    <div id="prizeBar" class="hidden">
+      <!-- Nội dung của prizeBar -->
+    </div>
+
 
     <div id="container"></div>
 
@@ -36,12 +39,11 @@
         <button id="lottery">Quay số</button>
         <button id="reLottery">Quay số lại</button>
         <div class="fixed-bar">
-          <button id="save" class="fixed-btn">Xuất kết quả</button>
-          <button id="reset" class="fixed-btn">Reset</button>
+          <button id="save" class="hidden">Xuất kết quả</button>
+          <button id="reset" class="hidden">Reset</button>
         </div>
       </div>
     </div>
 
-    <div class="qipao-container"></div>
   </body>
 </html>

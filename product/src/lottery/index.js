@@ -511,7 +511,7 @@ function selectCard(duration = 600) {
 
   let text = currentLuckys.map(item => item[1]);
   addQipao(
-    `Chúc mừng ${text.join("、")} đã nhận được ${currentPrize.title}。`
+    `Chúc mừng ${text.join("、")} đã nhận được giải ${currentPrize.title}。`
   );
 
   selectedCardIndex.forEach((cardIndex, index) => {
