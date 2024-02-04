@@ -709,7 +709,7 @@ function changeCard(cardIndex, user) {
 
   card.innerHTML = `<div class="company">${COMPANY}</div><div class="name">${
     user[1]
-  }</div><div class="details">${user[0] || ""}<br/>${user[2] || "PSST"}</div>`;
+  }</div><div class="details">${user[0] || ""}<br/>${user[2] || ""}</div>`;
 }
 
 /**
