@@ -616,7 +616,7 @@ function lottery() {
   //   btns.lottery.innerHTML = "开始抽奖";
   //   return;
   // }
-  btns.lottery.innerHTML = "Chọn người may mắn";
+  btns.lottery.innerHTML = "Chọn bộ phận may mắn";
   rotateBall().then(() => {
     // 将之前的记录置空
     currentLuckys = [];
