@@ -158,7 +158,7 @@ function showPrizeList(currentPrizeIndex) {
   if (currentPrize.type === defaultType) {
     currentPrize.count === "nhiều vô số";
   }
-  let htmlCode = `<div class="prize-mess">Giải<label id="prizeType" class="prize-shine">${currentPrize.text}</label><label id="prizeText" class="prize-shine">${currentPrize.title}</label>còn lại<label id="prizeLeft" class="prize-shine">${currentPrize.count}</label>lượt</div><ul class="prize-list">`;
+  let htmlCode = `<div class="prize-mess"> <label id="prizeType" class="prize-shine">${currentPrize.text}</label><label id="prizeText" class="prize-shine">${currentPrize.title}</label>còn lại<label id="prizeLeft" class="prize-shine">${currentPrize.count}</label>lượt</div><ul class="prize-list">`;
   prizes.forEach(item => {
     if (item.type === defaultType) {
       return true;

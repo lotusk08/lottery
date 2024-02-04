@@ -229,7 +229,7 @@ function bindEvent() {
       // Bắt đầu quay - bấm nút
       case "enter":
         removeHighlight();
-        addQipao(`Đang tìm chủ nhân của [${currentPrize.title}], đi ra ngoài mất ráng chịu。`);
+        addQipao(`Đang tìm đội trúng ${currentPrize.title}!`);
         // rotate = !rotate;
         rotate = true;
         switchScreen("lottery");
@@ -267,16 +267,16 @@ function bindEvent() {
           // 抽奖
           lottery();
         });
-        addQipao(`Đang quay giải [${currentPrize.title}]!`);
+        addQipao(`Đang quay giải ${currentPrize.title}`);
         break;
       // 重新抽奖
       case "reLottery":
         if (currentLuckys.length === 0) {
-          addQipao(`There is no lucky draw yet, so we cannot re-draw~~`);
+          addQipao(`Chưa tìm ra bên trúng thưởng, quay thưởng lại!`);
           return;
         }
         setErrorData(currentLuckys);
-        addQipao(`Đang tìm lại chủ nhân của [${currentPrize.title}]`);
+        addQipao(`Đang tìm lại chủ nhân của ${currentPrize.title}`);
         setLotteryStatus(true);
         // 重新抽奖则直接进行抽取，不对上一次的抽奖数据进行保存
         // 抽奖
@@ -293,7 +293,7 @@ function bindEvent() {
             currentLuckys = [];
           });
           exportData();
-          addQipao(`Danh sách những người trúng giải đã được xuất ra Excel。`);
+          addQipao(`Danh sách những bên trúng giải đã được xuất ra Excel。`);
         });
         break;
     }
