@@ -138,7 +138,7 @@ router.post("/errorData", (req, res, next) => {
 // Save data to Excel
 router.post("/export", (req, res, next) => {
   let type = [1, 2, 3, 4, 5, defaultType],
-    outData = [["Staf number", "Name", "Department"]];
+    outData = [["Notes", "Name", "Department"]];
   cfg.prizes.forEach(item => {
     outData.push([item.text]);
     outData = outData.concat(luckyData[item.type] || []);
