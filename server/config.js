@@ -11,56 +11,42 @@ const prizes = [
     type: 0,
     count: 1000,
     title: "",
-    text: "Giải may mắn"
+    text: "Vòng quay ngẫu nhiên"
   },
   {
     type: 1,
-    count: 2,
+    count: 3,
     text: "Giải đặc biệt",
-    title: "Một phần quà bí mật",
+    title: "50.000.000 VNĐ",
     img: "../img/secrit.jpg"
   },
   {
     type: 2,
     count: 5,
     text: "Giải nhất",
-    title: "Mac Pro",
+    title: "40.000.000 VNĐ",
     img: "../img/mbp.jpg"
   },
   {
     type: 3,
-    count: 6,
+    count: 5,
     text: "Giải nhì",
-    title: "Điện thoại Mate30",
+    title: "30.000.000 VNĐ",
     img: "../img/huawei.png"
   },
   {
     type: 4,
-    count: 7,
+    count: 10,
     text: "Giải ba",
-    title: "Ipad Mini5",
+    title: "20.000.000 VNĐ",
     img: "../img/ipad.jpg"
   },
   {
     type: 5,
-    count: 8,
-    text: "Giải phong cách",
-    title: "Flycam DJI",
+    count: 30,
+    text: "Giải khuyến khích",
+    title: "10.000.000 VNĐ",
     img: "../img/spark.jpg"
-  },
-  {
-    type: 6,
-    count: 8,
-    text: "Giải tương lai tri thức",
-    title: "Kindle",
-    img: "../img/kindle.jpg"
-  },
-  {
-    type: 7,
-    count: 11,
-    text: "Giải niềm vui quanh ta",
-    title: "Tai nghe bluetooth",
-    img: "../img/edifier.jpg"
   }
 ];
 
@@ -72,7 +58,7 @@ const EACH_COUNT = [1, 1, 5, 6, 7, 8, 9, 10];
 /**
  * Card company name identification
  */
-const COMPANY = "Tan Son Nhat Golf Course";
+const COMPANY = "We are IN";
 
 module.exports = {
   prizes,
